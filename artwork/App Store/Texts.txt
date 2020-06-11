@@ -1,0 +1,15 @@
+Apple App Store app texts: 
+
+Title: MyGol - App Oficial Competiciones Fútbol
+
+Short desc (80 chars): Consulta toda la información de tu competición: calendario, clasificaciones, etc.
+
+Keywords: MyGol, Fútbol, Minifútbol, AEMF, Liga, competición, sala, F5, F7, F11
+
+Long desc (4000 chars): MyGol es una App donde podrás consultar toda la información correspondiente a tu competición: calendarios, resultados, noticias, sanciones, estadísticas y que te mantendrán informado en cada momento del día a día de tu equipo. Podrás acceder de forma sencilla a los perfiles de tus próximos rivales y ser consciente de los méritos que han conseguido jornada tras jornada.
+
+MyGol ofrece un servicio de notificaciones en tiempo real con el que recibir avisos de modificación de horarios, actas de los partidos y todas aquellas noticias y promociones de la competición que puedan ser de tu interés.
+
+Comparte de forma sencilla tus méritos en tus redes sociales para que todo el mundo sea consciente de lo que tú y tú equipo sois capaces de hacer en un campo de fútbol.
+
+Privacy policy: http://tsmgroup.es/aviso_legal.php?id=avis

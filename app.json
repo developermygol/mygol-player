@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "MyGol",
+    "description": "MyGol plataforma de gestión deportiva",
+    "slug": "mygol",
+    "icon": "assets/IOS-app-icon.png",
+    "version": "1.1.2",
+    "privacy": "unlisted",
+    "scheme": "mygol",
+    "orientation": "portrait",
+    "splash": {
+      "image": "assets/splash-xxhdpi.png",
+      "backgroundColor": "#FFFFFF",
+      "resizeMode": "cover"
+    },
+    "assetBundlePatterns": [
+      "assets/*"
+    ],
+    "notification": {},
+    "updates": {
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 10000
+    },
+    "ios": {
+      "icon": "assets/IOS-app-icon.png",
+      "supportsTablet": false,
+      "bundleIdentifier": "es.tsmgroup.mygol.player",
+      "buildNumber": "1.1.0",
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "NSCameraUsageDescription": "MyGol usa la cámara para tomar imágenes necesarias para completar la inscripción en las competiciones.",
+        "NSPhotoLibraryUsageDescription": "MyGol accede a tus fotos para subir tu imagen de perfil u otras imágenes necesarias en el proceso de inscripción en las competiciones."
+      }
+    },
+    "android": {
+      "icon": "assets/android-app-icon.png",
+      "package": "es.tsmgroup.mygol.player",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 110,
+      "config": {},
+      "splash": {
+        "resizeMode": "cover",
+        "ldpi": "assets/splash-ldpi.png",
+        "mdpi": "assets/splash-mdpi.png",
+        "hdpi": "assets/splash-hdpi.png",
+        "xhdpi": "assets/splash-xhdpi.png",
+        "xxhdpi": "assets/splash-xxhdpi.png",
+        "xxxhdpi": "assets/splash-xxxhdpi.png"
+      }
+    }
+  }
+}
