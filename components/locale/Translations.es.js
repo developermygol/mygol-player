@@ -352,6 +352,7 @@ export default {
   'Sanctions.Matches': 'Partidos sancionados',
   'Sanctions.Match': 'Partido',
   'Sanction.Allegations': 'Alegaciones',
+  'Sanction.SanctionedMatches': 'Partidos sancionados',
   Details: 'Detalles',
 
   SanctionStatus1: 'En vigor - alegaciones abiertas',

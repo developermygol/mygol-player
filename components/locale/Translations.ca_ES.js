@@ -330,6 +330,33 @@
   'Fees.Title': 'Altres',
   'Fees.Description': 'Despeses de gestió',
 
+  // Sanctions
+  Tournament: 'Competició',
+  'Sanction.NoSanction': 'No hi ha sanció',
+  'Sanctions.Tournament.All': 'Sancions de la competició',
+  'Sanctions.Match.All': 'Sancions del partit',
+  'Sanctions.Team.All': 'Sancions del equip',
+  'Sanctions.Player.All': 'Sancions del jugador',
+  Sanction: 'Sanció',
+  'Sanctions.Date': 'Data de inici',
+  'Sanctions.Status': 'Estat',
+  'Sanctions.NumMatches': 'Núm. Partits',
+  'Sanctions.Matches': 'Partits sancionats',
+  'Sanctions.Match': 'Partit',
+  'Sanction.Allegations': 'Alegacions',
+  'Sanction.SanctionedMatches': 'Partits sancionats',
+  Details: 'Detalls',
+
+  SanctionStatus1: 'En vigor - alegacions obertes',
+  SanctionStatus2: 'En vigor - alegacions tancades',
+  SanctionStatus3: 'En trámit - alegacions obertes',
+  SanctionStatus4: 'Cumplida',
+  UserLevel1: 'Jugador',
+  UserLevel2: 'Árbit',
+  UserLevel3: 'Delegat de equip',
+  UserLevel4: 'Administrador organizació',
+  UserLevel5: 'Administrador plataforma',
+
   // Loading
   'Loading calendar': 'Carregant calendari...',
   'Loading field details': 'Carregant camp...',

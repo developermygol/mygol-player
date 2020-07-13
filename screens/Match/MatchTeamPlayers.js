@@ -28,6 +28,7 @@ const TeamPlayerNav = withNavigation(
       const { matchData } = player;
       const number = matchData && matchData.apparelNumber;
       const avatar = player.userData && player.userData.avatarImgUrl;
+      const currentTeam = player.teamData.idTeam;
       const playerHasSanctionOnCurrentTeam = player.idSanction > 0 && currentTeam === player.idSanctionTeam;
 
       return (
