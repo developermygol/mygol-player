@@ -82,7 +82,6 @@ class PlayersStore {
 
     enrollData = { ...data, idStep: 2, idPlayer: player.id, idTeam: player.teamData.idTeam, isEditing };
     const result = yield this.updateEnrollmentStep(enrollData);
-
     return result;
   });
 
