@@ -4,10 +4,11 @@ import { AppLoading } from 'expo';
 import { Provider } from 'mobx-react/native';
 import Store from './store/Store';
 import UiStore from './store/UiStore';
-import { setupPushNotifications } from './components/PushNotifications';
 import RootNavigator from './Navigator';
-import { setDeviceLangAsync } from './components/locale/Loc';
 import { ScreenOrientation } from 'expo'; // SDK 34
+
+import { setDeviceLangAsync } from './components/locale/Loc';
+import { setupPushNotifications } from './components/PushNotifications';
 
 Text.defaultProps = Text.defaultProps || {};
 Text.defaultProps.allowFontScaling = false;

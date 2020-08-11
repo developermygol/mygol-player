@@ -34,11 +34,13 @@
     "react": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
     "react-native-qrcode": "^0.2.7",
+    "react-native-render-html": "^4.2.2",
     "react-native-scrollable-tab-view": "^0.8.0",
     "react-native-view-shot": "~2.6.0",
     "react-navigation": "~2.3.1",
     "react-navigation-material-bottom-tabs": "^0.3.0",
     "stripe-client": "^1.1.5",
-    "tcomb-form-native": "^0.6.13"
+    "tcomb-form-native": "^0.6.13",
+    "react-native-webview": "7.0.5"
   }
 }

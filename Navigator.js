@@ -45,6 +45,8 @@ import PaidOptionsSummary from './screens/Enrollment/PaidOptionsSummary';
 import PaymentForm from './screens/Enrollment/PaymentForm';
 import RegistrationPin from './screens/Login/RegistrationPin';
 import SanctionDetails from './screens/Sanctions/SanctionDetails';
+import UserNotifications from './screens/Home/UserNotifications';
+import NotificationDetials from './screens/Home/NotificationDetails';
 
 setDeviceLangAsync();
 
@@ -80,7 +82,8 @@ const TournamentsNavigator = createStackNavigator(
   {
     Home,
     TournamentsList,
-
+    UserNotifications,
+    NotificationDetials,
     PlayerDetails,
     TournamentDetails: TournamentDetailsTabNavigator,
     TeamDetails,

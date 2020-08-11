@@ -357,6 +357,11 @@
   UserLevel4: 'Administrador organizació',
   UserLevel5: 'Administrador plataforma',
 
+  // Notifications
+  'Notifications.Delete': 'Borrar',
+  'Notifications.AlertTitle': 'Nova notificació',
+  'Notifications.AlertText': 'Revisa les notifiacions',
+
   // Loading
   'Loading calendar': 'Carregant calendari...',
   'Loading field details': 'Carregant camp...',

@@ -365,6 +365,11 @@ export default {
   UserLevel4: 'Administrador organización',
   UserLevel5: 'Administrador plataforma',
 
+  // Notifications
+  'Notifications.Delete': 'Borrar',
+  'Notifications.AlertTitle': 'Nova notificación',
+  'Notifications.AlertText': 'Revisa tus notifiaciones',
+
   // Loading
   'Loading calendar': 'Cargando calendario...',
   'Loading field details': 'Cargando campo...',
