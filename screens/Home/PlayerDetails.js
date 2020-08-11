@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text, StyleSheet, StatusBar } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, StatusBar, TouchableNativeFeedback } from 'react-native';
 import GlobalStyles, { GS, gColors } from '../../GlobalStyles';
 import PlayerData from './PlayerData';
 import Awards from './Awards';
@@ -12,6 +12,7 @@ import { setOrganizationHeader } from '../../store/OrganizationStore';
 import TeamDataDetailed from './TeamDataDetailed';
 import { observable } from 'mobx';
 import PlayerSanctions from './PlayerSanctions';
+import TeamSanctions from './TeamSanctions';
 
 @inject('store', 'ui')
 @observer
@@ -19,6 +20,7 @@ class PlayerDetails extends Component {
   static navigationOptions = headerNavigationOptions;
 
   @observable player = null;
+  @observable teamSanctions = null;
 
   constructor(props) {
     super(props);
@@ -54,6 +56,7 @@ class PlayerDetails extends Component {
     this.idTournament = idTournament;
 
     this.player = await p.store.players.getUser(idUser, idTeam, idTournament);
+    this.teamSanctions = await p.store.sanctions.getSanctionsForTeamAndTournament(idTeam, idTournament);
   };
 
   render() {
@@ -74,6 +77,7 @@ class PlayerDetails extends Component {
           </View>
           <Awards data={player} currentIdTeam={this.idTeam} currentIdTournament={this.idTournament} />
           <PlayerStats data={player} />
+          <TeamSanctions sanctions={this.teamSanctions} />
           <PlayerSanctions sanctions={player.sanctions} />
           <PlayerActions data={player} navigation={p.navigation} isOwner={isOwner} />
           {/* {isOwner ? <News /> : null } */}

@@ -98,7 +98,6 @@ class Home extends Component {
   }
 
   _handleNotification = async notification => {
-    debugger;
     const currentUserNotifications = await this.props.store.notifications.getUserNotifications();
     this.props.navigation.setParams({ userNotifications: currentUserNotifications });
     Vibration.vibrate();

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { GS, gColors } from '../../GlobalStyles';
 import SectionHead from '../../components/common/SectionHead';
@@ -7,28 +7,25 @@ import { Localize } from '../../components/locale/Loc';
 import DataTable from '../../components/common/DataTable';
 import { getFormattedDate } from '../../components/Utils';
 
-class PlayerSanctions extends Component {
+class TeamSanctions extends Component {
   handleDatePress = sanction => {
     this.props.navigation.navigate('SanctionDetails', { idSanction: sanction.id });
   };
 
   renderDate = (row, col) => {
     return (
-      <TouchableOpacity key={col.id} style={style.StartDate} onPress={() => this.handleDatePress(row)}>
-        <Text style={style.TouchableText}>{getFormattedDate(row.startDate)}</Text>
+      <TouchableOpacity key={col.id} style={styles.StartDate} onPress={() => this.handleDatePress(row)}>
+        <Text style={styles.TouchableText}>{getFormattedDate(row.startDate)}</Text>
       </TouchableOpacity>
     );
   };
 
   render() {
-    const p = this.props;
-
-    if (!p.sanctions || p.sanctions.length === 0) return null;
+    if (!this.props.sanctions || this.props.sanctions.length === 0) return null;
 
     return (
       <View style={{ alignSelf: 'stretch' }}>
-        <SectionHead title={Localize('Sanctions.Player.All')} />
-
+        <SectionHead title={Localize('Sanctions.Team.All')} />
         <View style={GS.box.card}>
           <DataTable
             columns={[
@@ -37,22 +34,22 @@ class PlayerSanctions extends Component {
                 title: Localize('Sanctions.Date'),
                 fieldName: 'startDate',
                 renderHandler: this.renderDate,
-                style: style.StartDate,
-                headerStyle: style.StartDate,
+                style: styles.StartDate,
+                headerStyle: styles.StartDate,
               },
-              //{ id: 2, title: Localize('Sanctions.NumMatches'), fieldName: 'numMatches', style: style.NumMatches, headerStyle: style.NumMatches },
+              //{ id: 2, title: Localize('Sanctions.NumMatches'), fieldName: 'numMatches', style: styles.NumMatches, headerStyle: styles.NumMatches },
               {
                 id: 3,
                 title: Localize('Sanctions.Status'),
                 fieldName: 'status',
-                style: style.Status,
-                headerStyle: style.Status,
+                style: styles.Status,
+                headerStyle: styles.Status,
                 valueAdapter: v => Localize('SanctionStatus' + v),
               },
             ]}
             dataKeyField="id"
-            data={p.sanctions}
-            style={style.DataTable}
+            data={this.props.sanctions}
+            style={styles.DataTable}
             hideHeader={true}
           />
         </View>
@@ -61,7 +58,7 @@ class PlayerSanctions extends Component {
   }
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   View: {},
   TouchableText: {
     fontWeight: '600',
@@ -83,4 +80,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default withNavigation(PlayerSanctions);
+export default withNavigation(TeamSanctions);
