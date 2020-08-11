@@ -22,7 +22,7 @@ class Awards extends Component {
     //     { id: 20, name: 'MVP', date: new Date(), day: { id: 16, name: 'Jornada 6' }, type: 1 },
     // ];
 
-    if (hasAwards && relevantAwards.length === 0) return null;
+    if (!hasAwards || relevantAwards.length === 0) return null;
 
     return (
       <View style={{ alignSelf: 'stretch' }}>
