@@ -204,6 +204,9 @@ export default {
   // Rankings
   Rankings: 'Rankings',
   ScorersRanking: 'Goleadores',
+  GoalkeepersRanking: 'Porteros',
+  AssistancesRanking: 'Asistencias',
+  MVPsRanking: 'MVPs',
   Rank: '#',
   Player: 'Jugador',
   Team: 'Equipo',
@@ -277,6 +280,7 @@ export default {
   PlayerActions: 'Otras secciones',
   'My.Tournament': 'Mi competición',
   'My.Calendar': 'Mi calendario',
+  'My.Rankings': 'Mis rankings',
   'My.Ficha': 'Mi ficha',
   'Player.MatchCalendar': 'Calendario del jugador',
 

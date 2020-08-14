@@ -36,6 +36,11 @@ class PlayerActions extends Component {
     this.props.navigation.push('PlayerCalendar', { idPlayer, idTournament });
   };
 
+  goToRankings = () => {
+    const currentTournament = this.props.store.tournaments.current;
+    this.props.navigation.push('Rankings', { idTournament: currentTournament.id });
+  };
+
   goToFicha = () => {
     const p = this.props;
     p.navigation.push('Ficha', { player: p.data });
@@ -65,6 +70,7 @@ class PlayerActions extends Component {
         <View style={GS.box.card}>
           <RightButton title="My.Tournament" onPress={this.goToClassification} />
           <RightButton title="My.Calendar" onPress={this.goToCalendar} />
+          <RightButton title="My.Rankings" onPress={this.goToRankings} />
           <RightButton title="My.Ficha" onPress={this.goToFicha} />
 
           {/* <RightButton title='PaymentFormScreenTitle' onPress={this.goToPayment} /> */}

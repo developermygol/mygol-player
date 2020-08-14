@@ -201,6 +201,9 @@
   // Rankings
   Rankings: 'Rankings',
   ScorersRanking: 'Golejadors',
+  GoalkeepersRanking: 'Porters',
+  AssistancesRanking: 'Asistències',
+  MVPsRanking: 'MVPs',
   Rank: '#',
   Player: 'Jugador',
   Team: 'Equip',
@@ -272,6 +275,7 @@
   PlayerActions: 'Altres seccions',
   'My.Tournament': 'La meva competició',
   'My.Calendar': 'El meu calendari',
+  'My.Rankings': 'Els meus rankings',
   'My.Ficha': 'La meva fitxa',
   'Player.MatchCalendar': 'Calendari del jugador',
 

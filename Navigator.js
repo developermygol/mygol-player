@@ -94,6 +94,7 @@ const TournamentsNavigator = createStackNavigator(
     PlayerClassification: Classification,
     Ficha,
     SanctionDetails,
+    Rankings,
   },
   {
     navigationOptions: stackNavigatorOptions,

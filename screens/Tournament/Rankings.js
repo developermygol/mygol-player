@@ -25,7 +25,10 @@ class Rankings extends Component {
 
   @observable loading = false;
   @observable error = null;
-  @observable data = null;
+  @observable scorers = null;
+  @observable goalkeepers = null;
+  @observable assistances = null;
+  @observable mvps = null;
 
   componentDidMount() {
     this.loadData();
@@ -41,22 +44,40 @@ class Rankings extends Component {
     const idTournament = p.navigation.getParam('idTournament');
 
     if (this.idTournament === idTournament) return;
-
     this.idTournament = idTournament;
     const type = 1;
-    this.data = null;
-    this.data = yield requestAsync(
+
+    this.scorers = yield requestAsync(
       this,
       axios.get,
       null,
       '/tournaments/' + idTournament + '/ranking/scorers/' + type
+    );
+    this.goalkeepers = yield requestAsync(
+      this,
+      axios.get,
+      null,
+      '/tournaments/' + idTournament + '/ranking/goalkeepers/' + type
+    );
+    this.assistances = yield requestAsync(
+      this,
+      axios.get,
+      null,
+      '/tournaments/' + idTournament + '/ranking/assistances/' + type
+    );
+    this.mvps = yield requestAsync(
+      this,
+      axios.get,
+      null,
+      '/tournaments/' + idTournament + '/ranking/mvps/' + type
     );
   });
 
   render() {
     const p = this.props;
 
-    if (!this.data) return <FsSpinner lMsg="Loading ranking" />;
+    if (!this.scorers || !this.goalkeepers || !this.assistances || !this.mvps)
+      return <FsSpinner lMsg="Loading ranking" />;
 
     return (
       <View style={style.View}>
@@ -65,8 +86,30 @@ class Rankings extends Component {
           <ScorersRanking
             key={1}
             tabLabel={Localize('ScorersRanking')}
+            type="scorers"
             idTournament={this.idTournament}
-            data={this.data}
+            data={this.scorers}
+          />
+          <ScorersRanking
+            key={2}
+            tabLabel={Localize('GoalkeepersRanking')}
+            type="goalkeepers"
+            idTournament={this.idTournament}
+            data={this.goalkeepers}
+          />
+          <ScorersRanking
+            key={3}
+            tabLabel={Localize('AssistancesRanking')}
+            type="assitances"
+            idTournament={this.idTournament}
+            data={this.assistances}
+          />
+          <ScorersRanking
+            key={4}
+            tabLabel={Localize('MVPsRanking')}
+            type="mvps"
+            idTournament={this.idTournament}
+            data={this.mvps}
           />
         </ScrollableTabView>
       </View>
