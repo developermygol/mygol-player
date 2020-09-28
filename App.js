@@ -5,7 +5,8 @@ import { Provider } from 'mobx-react/native';
 import Store from './store/Store';
 import UiStore from './store/UiStore';
 import RootNavigator from './Navigator';
-import { ScreenOrientation } from 'expo'; // SDK 34
+// import { ScreenOrientation } from 'expo'; // SDK 34
+import * as ScreenOrientation from 'expo-screen-orientation';
 
 import { setDeviceLangAsync } from './components/locale/Loc';
 import { setupPushNotifications } from './components/PushNotifications';
