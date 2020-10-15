@@ -28,6 +28,7 @@
     "expo-image-picker": "~8.1.0",
     "expo-localization": "~8.1.0",
     "expo-permissions": "~8.1.0",
+    "expo-screen-orientation": "~1.0.0",
     "lodash": "^4.17.15",
     "mobx": "^4.3.0",
     "mobx-react": "^5.1.2",
@@ -36,12 +37,12 @@
     "react-native-qrcode": "github:wanxsb/react-native-qrcode#1a08f9cedcb747fd230be717fe815c686e4427cb",
     "react-native-render-html": "^4.2.2",
     "react-native-scrollable-tab-view": "^1.0.0",
+    "react-native-uuid": "^1.4.9",
     "react-native-view-shot": "3.1.2",
     "react-native-webview": "^8.1.1",
     "react-navigation": "~2.3.1",
     "react-navigation-material-bottom-tabs": "^0.3.0",
     "stripe-client": "^1.1.5",
-    "tcomb-form-native": "^0.6.13",
-    "expo-screen-orientation": "~1.0.0"
+    "tcomb-form-native": "^0.6.13"
   }
 }

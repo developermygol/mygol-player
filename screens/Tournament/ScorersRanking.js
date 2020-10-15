@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { inject, observer } from '../../node_modules/mobx-react/native';
+
 import { Localize } from '../../components/locale/Loc';
 import DataTable from '../../components/common/DataTable';
 import { withNavigation } from 'react-navigation';
