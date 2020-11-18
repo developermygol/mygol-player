@@ -101,6 +101,7 @@ class PersonalData extends Component {
 
   getFormOptions = () => {
     const editable = !this.data.approved;
+    // const positionEditable = !this.data.approved || isPlayer position [5,6,7]
 
     return {
       fields: {
