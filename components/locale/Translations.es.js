@@ -387,6 +387,44 @@ export default {
   'Loading ranking': 'Cargando ranking...',
   'Loading sanction details': 'Cargando sanción...',
 
+  // Terms and conditions
+  'Terms.Updated':
+    'There is a new revision of the terms and conditions. Please review them before continuing',
+  TermsText1: `
+
+BASIC INFORMATION ON DATA PROTECTION
+
+RESPONSIBLE
+{0} with id number {1}
+{2}
+
+PURPOSE
+
+Fulfill your request for registration, manage and publish information on sporting events in which to participate and show business communications.
+
+LEGITIMATION
+
+Execution of a contract. Consent of the interested party.
+
+ASSIGNMENT TO THIRD PARTIES
+
+Your data can be processed by the company that owns the MYGOL, Technology Sports Management SL application.
+
+RIGHTS
+
+You have the right to access, rectify and delete the data, as well as other rights, indicated in the additional information, which you can exercise by going to the address of the data controller.
+
+DATA PROCEEDINGS
+
+The interested party.
+`,
+  TermsConsent1: 'I accept the conditions of the privay policy.',
+  TermsConsent2:
+    'I consent company {0}, with id number {1}, to treat my images in photographs or videos made in the field of sports competitions organized by said company, as well as my full name in order to disseminate the sports activities offered in the app MyGol',
+  TermsLinkText: 'Read the full terms and conditions text and the privacy policy',
+  'Terms.MustAccept.Title': 'Read the full text of the privacy policy and terms of use',
+  'Terms.MustAccept.Message': 'You must accept the terms and conditions to continue',
+
   // Errors
   Error: 'Error',
   NoData: 'No hay datos para mostrar',
