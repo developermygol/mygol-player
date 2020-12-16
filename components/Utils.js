@@ -285,3 +285,11 @@ export const interpolateStringMultiple = (str, ...args) => {
 
   return result;
 };
+
+export const jsonParse = jsonString => {
+  try {
+    return JSON.parse(jsonString);
+  } catch (err) {
+    return null;
+  }
+};
