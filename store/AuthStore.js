@@ -168,6 +168,14 @@ class AuthStore {
 
     yield clearAuthData();
   });
+
+  resetUserPassword = async email => {
+    try {
+      await axios.get(`/users/resetpassword?e=${email}`);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 }
 
 export default AuthStore;

@@ -146,14 +146,14 @@ class Ficha extends Component {
                 source={{ uri: getUploadsIcon(pl.fichaPictureImgUrl, pl.id, 'user') }}
               />
             </View>
-            <View style={[style.Half, { alignItems: 'center' }]}>
+            {/* <View style={[style.Half, { alignItems: 'center' }]}>
               <QRCode
                 value={this.getQrPayload(pl.id, pl.idUser, t.id)}
                 bgColor={gColors.background}
                 fgColor={gColors.intense}
                 size={150}
               />
-            </View>
+            </View> */}
           </View>
 
           <View style={style.Horizontal}>

@@ -222,6 +222,10 @@ const typeImages = {
   1: 'mvp.png',
   2: 'maxscorer.png',
   3: 'dreamteam.png',
+  10: 'maxscorer.png',
+  20: 'GoalKeeper.png',
+  30: 'assistances.png',
+  40: 'dreamteampoints.png',
 };
 
 export const getAwardUri = awardType => {

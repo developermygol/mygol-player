@@ -18,6 +18,11 @@ export default {
   'LoginPassword.Validation': 'La contraseña no puede estar vacía',
   PasswordTitle: 'Contraseña',
   PasswordIntro: 'Para completar el inicio de sesión',
+  PasswordForgotten: '¿Ha olvidado la contrasenya?',
+  PasswordForgotTitle: 'Reset password',
+  PasswordForgotIntro: 'Enter the email address to request a password reset',
+  PasswordForgotBack: 'go back to the login screen',
+  PasswordForgotSuccess: 'An email with password reset instructions has been sent to the address provided.',
 
   // Pin:
   Pin: 'PIN',
@@ -263,6 +268,11 @@ export default {
   AwardType1: 'MVP',
   AwardType2: 'Máximo goleador',
   AwardType3: 'Equipo ideal',
+  AwardType10: 'Top Scorers Ranking',
+  AwardType20: 'Top Goalkeepers Ranking',
+  AwardType30: 'Top Assistances Ranking',
+  AwardType40: 'Top MVPs Ranking',
+  AwardType50: 'Best Fair Play',
   'Award.Share': 'Compartir logro',
   'Award.Share.Title': '¡Logro conseguido!',
 
