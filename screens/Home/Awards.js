@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import SectionHead from '../../components/common/SectionHead';
 import { Localize } from '../../components/locale/Loc';
 import AwardSmall from './AwardSmall';
@@ -28,11 +28,13 @@ class Awards extends Component {
       <View style={{ alignSelf: 'stretch' }}>
         <SectionHead title={Localize('Awards')} />
         <View style={GS.box.card}>
-          <View style={style.Awards}>
-            {relevantAwards.map(award => {
-              return <AwardSmall key={award.id} award={award} player={p.data} />;
-            })}
-          </View>
+          <ScrollView contentContainerStyle={{ flexGrow: 1 }} horizontal={true}>
+            <View style={style.Awards}>
+              {relevantAwards.map(award => {
+                return <AwardSmall key={award.id} award={award} player={p.data} />;
+              })}
+            </View>
+          </ScrollView>
         </View>
       </View>
     );
@@ -44,6 +46,7 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignSelf: 'stretch',
+    marginHorizontal: 10,
   },
 });
 

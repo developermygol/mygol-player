@@ -216,6 +216,11 @@ export default {
   Player: 'Jugador',
   Team: 'Equipo',
 
+  
+  // Dream team
+  DreamTeam: 'Dream team',
+  'DreamTeam.NoPlayers': 'No players in the dream team yet.',
+
   // Teams
   'Tournament.NoTeams': 'Aún hay equipos en la competición',
 

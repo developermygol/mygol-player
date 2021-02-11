@@ -36,9 +36,9 @@ class PlayerActions extends Component {
     this.props.navigation.push('PlayerCalendar', { idPlayer, idTournament });
   };
 
-  goToRankings = () => {
+  goToDreamTeams = () => {
     const currentTournament = this.props.store.tournaments.current;
-    this.props.navigation.push('Rankings', { idTournament: currentTournament.id });
+    this.props.navigation.push('DreamTeams', { idTournament: currentTournament.id });
   };
 
   goToFicha = () => {

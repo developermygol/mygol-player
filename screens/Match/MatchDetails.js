@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { inject } from '../../node_modules/mobx-react';
 import { observer } from '../../node_modules/mobx-react/native';
 import { withNavigation } from 'react-navigation';

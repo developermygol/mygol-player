@@ -31,6 +31,8 @@ const style = StyleSheet.create({
   View: {
     flex: 1,
     alignItems: 'center',
+    marginHorizontal: 10,
+    maxWidth: 150,
   },
   AwardIcon: {
     width: 60,
@@ -40,8 +42,10 @@ const style = StyleSheet.create({
   },
   Name: {
     color: gColors.text1,
+    textAlign: 'center',
   },
   Day: {
+    textAlign: 'center',
     color: gColors.text2,
   },
 });

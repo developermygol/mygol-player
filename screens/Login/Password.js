@@ -89,7 +89,7 @@ class Password extends Component {
   };
 
   render() {
-    console.log(this.data);
+    // console.log(this.data);
 
     return (
       <KeyboardAvoidingView behavior="padding">

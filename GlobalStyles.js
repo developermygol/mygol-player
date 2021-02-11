@@ -12,6 +12,7 @@ export const gColors = {
   minorError: '#C00',
   severeError: '#F00',
 
+  white: '#FFFFFF',
   red: 'red',
   green: 'green',
 

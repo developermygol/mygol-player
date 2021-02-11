@@ -48,6 +48,7 @@ import ResetPassword from './screens/Login/ResetPassword';
 import SanctionDetails from './screens/Sanctions/SanctionDetails';
 import UserNotifications from './screens/Home/UserNotifications';
 import NotificationDetials from './screens/Home/NotificationDetails';
+import DreamTeam from './screens/Tournament/DreamTeam/DreamTeam';
 
 setDeviceLangAsync();
 
@@ -66,6 +67,7 @@ const TournamentDetailsTabNavigator = bottomTabCreator(
     Classification: Classification,
     TournamentCalendar: TournamentCalendar,
     Rankings: Rankings,
+    DreamTeam: DreamTeam,
   },
   {
     navigationOptions: {
