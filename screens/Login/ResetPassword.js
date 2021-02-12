@@ -67,6 +67,7 @@ class ResetPassword extends Component {
   render() {
     return (
       <KeyboardAvoidingView behavior="padding">
+        <StatusBar barStyle="light-content" />
         <ImageBackground source={Background} style={[GlobalStyles.ScreenImageBackground, styles.View]}>
           <Text style={styles.IntroTitle}>{Localize('PasswordForgotTitle')}</Text>
           <Text style={styles.IntroText}>{Localize('PasswordForgotIntro')}</Text>

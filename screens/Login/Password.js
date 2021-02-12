@@ -93,6 +93,7 @@ class Password extends Component {
 
     return (
       <KeyboardAvoidingView behavior="padding">
+        <StatusBar barStyle="light-content" />
         <ImageBackground source={Background} style={[GlobalStyles.ScreenImageBackground, style.View]}>
           <Text style={style.IntroTitle}>{Localize('PasswordTitle')}</Text>
           {/* <Text style={style.IntroText}>{Localize('PasswordIntro')}</Text> */}
