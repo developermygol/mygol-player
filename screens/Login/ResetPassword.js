@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { ImageBackground, KeyboardAvoidingView, Text, View, StyleSheet, Alert } from 'react-native';
+import {
+  ImageBackground,
+  KeyboardAvoidingView,
+  Text,
+  View,
+  StyleSheet,
+  Alert,
+  StatusBar,
+} from 'react-native';
 import { observer, inject } from 'mobx-react/native';
 import t from 'tcomb-form-native';
 

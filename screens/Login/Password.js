@@ -9,6 +9,7 @@ import {
   Image,
   AsyncStorage,
   ImageBackground,
+  StatusBar,
 } from 'react-native';
 import Button from '../../components/common/Button';
 import { StackActions, NavigationActions } from 'react-navigation';
