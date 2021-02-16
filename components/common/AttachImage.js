@@ -11,6 +11,7 @@ import IconButton from './IconButton';
 import { gColors } from '../../GlobalStyles';
 // import Expo from 'expo';
 import * as FileSystem from 'expo-file-system'; // SDK 34
+import * as ImageManipulator from 'expo-image-manipulator'; // SDK37
 
 @observer
 class AttachImage extends Component {
@@ -57,15 +58,25 @@ class AttachImage extends Component {
     }
   };
 
-  handleImagePicked = result => {
+  handleImagePicked = async result => {
     if (result.cancelled) return;
 
-    // Check image size
-    // Expo.FileSystem.getInfoAsync(result.uri, (options = { size: false })).then(fileInfo => { // SDK 34
-    FileSystem.getInfoAsync(result.uri, (options = { size: false })).then(fileInfo => {
-      this.size = fileInfo.size;
-      this.image = result.uri;
-    });
+    const oneMBtoBytes = 1000000;
+
+    const fileInfo = await FileSystem.getInfoAsync(result.uri, (options = { size: false }));
+
+    if (fileInfo.size > oneMBtoBytes) {
+      const compressedImage = await ImageManipulator.manipulateAsync(fileInfo.localUri || fileInfo.uri, [], {
+        compress: Math.round((oneMBtoBytes / fileInfo) * 100) / 100,
+      });
+      this.size = false;
+      this.image = compressedImage.uri;
+      return compressedImage;
+    }
+
+    this.size = fileInfo.size;
+    this.image = result.uri;
+    return fileInfo;
   };
 
   render() {

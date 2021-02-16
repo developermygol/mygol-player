@@ -46,6 +46,7 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "stripe-client": "^1.1.5",
-    "tcomb-form-native": "^0.6.13"
+    "tcomb-form-native": "^0.6.13",
+    "expo-image-manipulator": "~8.1.0"
   }
 }
