@@ -71,7 +71,12 @@ const MatchEvent = withNavigation(class MatchEventClass extends Component {
         }
     }
 
-    getEventText = (eventType) => {
+    getEventText = (eventType, match) => {
+        const isShootout = eventType === 80;
+        if (isShootout)
+          return `${Localize('MatchEventType' + eventType)} (${match.homeScore - match.visibleHomeScore}-${
+            match.visitorScore - match.visibleVisitorScore
+          })`;
         return Localize('MatchEventType' + eventType);
     }
 
@@ -104,12 +109,12 @@ const MatchEvent = withNavigation(class MatchEventClass extends Component {
     }
 
     renderCenter = () => {
-        const { event } = this.props;
+        const { event, match } = this.props;
 
         return (
             <View style={style.Event}>
                 <View style={style.CenterEvent}>
-                    <Text style={style.CenterEventText}>{this.getEventText(event.type)}</Text>
+                    <Text style={style.CenterEventText}>{this.getEventText(event.type, match)}</Text>
                 </View>
             </View>
         );
