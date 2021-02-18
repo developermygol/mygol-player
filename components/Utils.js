@@ -219,6 +219,7 @@ export const getShortMatchDate = d => {
 // __ Awards __________________________________________________________________
 
 const typeImages = {
+  0: 'dreamteam.png',
   1: 'mvp.png',
   2: 'maxscorer.png',
   3: 'dreamteam.png',
