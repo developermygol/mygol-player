@@ -15,12 +15,14 @@ class AwardSmall extends Component {
   render() {
     const p = this.props;
     const { award } = p;
+
     if (!award) return null;
 
     return (
       <TouchableOpacity onPress={this.handlePress} style={style.View}>
         <Image source={{ uri: getAwardUri(award.type) }} style={style.AwardIcon} />
         <Text style={style.Name}>{Localize('AwardType' + award.type)}</Text>
+        {award.text1 && <Text style={style.Detail}>{award.text1}</Text>}
         <Text style={style.Day}>{award.day && award.day.name}</Text>
       </TouchableOpacity>
     );
@@ -47,6 +49,9 @@ const style = StyleSheet.create({
   Day: {
     textAlign: 'center',
     color: gColors.text2,
+  },
+  Detail: {
+    fontSize: 10,
   },
 });
 

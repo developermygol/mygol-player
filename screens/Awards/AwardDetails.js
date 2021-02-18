@@ -91,6 +91,7 @@ class AwardDetails extends Component {
             <Text>{award.tournament.name}</Text>
             <Text style={style.PlayerName}>{(player.name + ' ' + player.surname).toUpperCase()}</Text>
             <Text style={style.AwardType}>{this.getAwardName(award.type)}</Text>
+            {award.text1 && <Text style={style.Day}>{award.text1}</Text>}
             <Text style={style.Day}>{award.day.name}</Text>
           </View>
           {/* </View> */}
