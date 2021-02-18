@@ -9,7 +9,7 @@ import { Localize } from '../../components/locale/Loc';
 class AwardSmall extends Component {
   handlePress = () => {
     const p = this.props;
-    //p.navigation.push('AwardDetails', { player: p.player, award: p.award });
+    p.navigation.push('AwardDetails', { player: p.player, award: p.award, tournament: p.tournament });
   };
 
   render() {

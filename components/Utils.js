@@ -228,15 +228,14 @@ const typeImages = {
   40: 'dreamteampoints.png',
 };
 
-export const getAwardUri = awardType => {
-  return config.reactAppStaticUrl + '/awards/' + typeImages[awardType];
+export const getAwardUri = (awardType, large = false) => {
+  return `${config.reactAppStaticUrl}/${large ? 'largeawards' : 'awards'}/${typeImages[awardType]}`;
 };
 
 // __ Share & snapshots _______________________________________________________
 
 export const getViewSnapshotAsBase64Async = async snapshotRef => {
   if (!snapshotRef) return null;
-
   const result = await takeSnapshotAsync(snapshotRef, {
     result: 'data-uri',
     quality: 1,
@@ -251,12 +250,13 @@ export const shareUriDialog = (uri, title, dialogTitle) => {
 
   Share.share(
     {
-      type: 'image/png',
+      // type: 'image/png',
       url: uri,
       title: Localize(title),
+      message: uri,
     },
     {
-      dialogTitle: Localize(dialogTitle),
+      dialogTitle: uri,
     }
   );
 };
@@ -277,7 +277,6 @@ export const getFormattedTime = time => {
 
 export const interpolateString = (str, ...args) => {
   let result = str;
-  debugger;
   for (let i = 0; i < args.length; ++i) result = result.replace('{' + i + '}', args[i]);
 
   return result;
