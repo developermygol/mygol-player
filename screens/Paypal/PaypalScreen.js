@@ -14,7 +14,7 @@ class PaypalScreen extends Component {
       // 🚧 Adapt information and continue to enrollmentstep
       const st = this.props.store.players;
       const result = await st.saveEnrollmentStep21({ id: paymentId });
-      debugger;
+
       if (result) this.props.navigation.navigate('Congrats');
       else toast.error(st.error);
     }
