@@ -20,11 +20,14 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@react-native-community/checkbox": "^0.5.7",
+    "@react-native-community/masked-view": "0.1.6",
     "axios": "^0.18.1",
     "dateformat": "^3.0.3",
     "expo": "^37.0.0",
     "expo-asset": "~8.1.5",
     "expo-file-system": "~8.1.0",
+    "expo-image-manipulator": "~8.1.0",
     "expo-image-picker": "~8.1.0",
     "expo-localization": "~8.1.0",
     "expo-permissions": "~8.1.0",
@@ -34,19 +37,22 @@
     "mobx-react": "^5.1.2",
     "react": "16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
+    "react-native-gesture-handler": "~1.6.0",
     "react-native-qrcode": "github:wanxsb/react-native-qrcode#1a08f9cedcb747fd230be717fe815c686e4427cb",
+    "react-native-reanimated": "~1.7.0",
     "react-native-render-html": "^4.2.2",
+    "react-native-safe-area-context": "0.7.3",
+    "react-native-screens": "~2.2.0",
     "react-native-scrollable-tab-view": "^1.0.0",
     "react-native-uuid": "^1.4.9",
     "react-native-view-shot": "3.1.2",
     "react-native-webview": "^8.1.1",
-    "react-navigation": "~2.3.1",
+    "react-navigation": "^2.18.3",
     "react-navigation-material-bottom-tabs": "^0.3.0",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "stripe-client": "^1.1.5",
-    "tcomb-form-native": "^0.6.13",
-    "expo-image-manipulator": "~8.1.0"
+    "tcomb-form-native": "^0.6.13"
   }
 }

@@ -161,15 +161,19 @@ class PlayersStore {
         this.error = 'Error.OrgPaymentNotConfigured';
         return false;
       }
-
-      res = yield getStripeCardToken(this, paymentForm, org.paymentKeyPublic);
-      if (!res) {
-        this.error = Localize('Error.PaymentGateway');
-        return false;
-      }
-      if (res.error) {
-        this.error = res.error.message;
-        return false;
+      if (org.paymentGetawayType === 'paypal') {
+        res = paymentForm;
+      } else {
+        //🔎 stripe platform
+        res = yield getStripeCardToken(this, paymentForm, org.paymentKeyPublic);
+        if (!res) {
+          this.error = Localize('Error.PaymentGateway');
+          return false;
+        }
+        if (res.error) {
+          this.error = res.error.message;
+          return false;
+        }
       }
     }
 
@@ -178,8 +182,9 @@ class PlayersStore {
       idPlayer: player.id,
       idTeam: player.teamData.idTeam,
       idTournament: this.ownerTournamentId,
-      paymentGatewayResult: res.id,
+      paymentGatewayResult: res.id, // 🚧 Add others for paypal
     };
+
     const result = yield this.updateEnrollmentStep(enrollData);
     if (result == null) {
       this.error = 'Error.PaymentBackend';

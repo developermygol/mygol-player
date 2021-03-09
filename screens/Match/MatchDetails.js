@@ -39,13 +39,13 @@ class MatchDetails extends Component {
 
   componentDidMount = () => {
     instance = this;
-
     this.loadData();
   };
 
   loadData = () => {
     const p = this.props;
     const idMatch = p.navigation.getParam('idMatch');
+
     p.store.matches.actions.get(idMatch);
   };
 
@@ -58,11 +58,13 @@ class MatchDetails extends Component {
     const match = p.store.matches.current;
     const idMatch = p.navigation.getParam('idMatch');
 
+    const idPlayer = p.store.players.current.id;
+
     if (!match || match.id !== idMatch) return <FsSpinner lMsg="Loading match details" />;
 
     return (
       <View style={style.View}>
-        <MatchHeader match={match} />
+        <MatchHeader match={match} idPlayer={idPlayer} navigation={p.navigation} />
         {/* <MatchSummonStatus match={match}  /> */}
 
         <ScrollableTabView {...ScrollableTabViewProps} initialPage={1}>

@@ -402,6 +402,12 @@ export default {
   'Loading ranking': 'Cargando ranking...',
   'Loading sanction details': 'Cargando sanción...',
 
+  // Notices
+  'Notices.Warning': 'You have pending notices for this match:',
+  'Notices.Confirm.Button.Default': 'Accept',
+  'Notices.Alert.Title': 'Read the full text of the privacy policy and terms of use',
+  'Notices.Alert.Message': 'You must accept the terms and conditions to continue',
+
   // Terms and conditions
   'Terms.Updated':
     'There is a new revision of the terms and conditions. Please review them before continuing',

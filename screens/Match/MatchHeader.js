@@ -6,12 +6,13 @@ import MatchStatus from './MatchStatus';
 
 import Back from '../../assets/backgrounds/top1.jpg';
 import { gColors } from '../../GlobalStyles';
+import MatchNotice from './MatchNotice';
 @inject('store')
 @observer
 class MatchHeader extends Component {
   render() {
     const p = this.props;
-    const { match } = p;
+    const { match, idPlayer } = p;
     if (!match) return null;
 
     const normalTeams = p.store.teams.normal;
@@ -19,11 +20,14 @@ class MatchHeader extends Component {
     const visitorTeam = normalTeams && normalTeams[match.idVisitorTeam];
 
     return (
-      <ImageBackground source={Back} style={[style.View, p.style]}>
-        <TeamData data={homeTeam} style={style.TeamIcon} textStyle={style.TeamName} />
-        <MatchStatus match={match} style={style.Status} />
-        <TeamData data={visitorTeam} style={style.TeamIcon} textStyle={style.TeamName} />
-      </ImageBackground>
+      <>
+        <MatchNotice match={match} idPlayer={idPlayer} navigation={p.navigation} />
+        <ImageBackground source={Back} style={[style.View, p.style]}>
+          <TeamData data={homeTeam} style={style.TeamIcon} textStyle={style.TeamName} />
+          <MatchStatus match={match} style={style.Status} />
+          <TeamData data={visitorTeam} style={style.TeamIcon} textStyle={style.TeamName} />
+        </ImageBackground>
+      </>
     );
   }
 }

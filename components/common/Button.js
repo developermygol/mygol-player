@@ -16,13 +16,14 @@ import { gColors } from '../../GlobalStyles';
 class Button extends Component {
   render() {
     const p = this.props;
+    const name = p.name;
     const title = Localize(p.title);
 
     return (
       <View style={p.style}>
-        <View style={[styles.ButtonFrame]}>
-          <TouchableOpacity activeOpacity={0.2} onPress={p.onPress} style={styles.Button}>
-            <Text style={styles.ButtonText}>{title}</Text>
+        <View style={[styles.ButtonFrame(p.borderColor)]}>
+          <TouchableOpacity activeOpacity={0.2} onPress={p.onPress} style={styles.Button(p.bgColor)}>
+            <Text style={styles.ButtonText(p.color)}>{name || title}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -31,29 +32,29 @@ class Button extends Component {
 }
 
 const styles = StyleSheet.create({
-  ButtonText: {
+  ButtonText: color => ({
     fontSize: 18,
-    color: gColors.buttonText,
+    color: color || gColors.buttonText,
     fontWeight: '600',
     alignSelf: 'stretch',
     textAlign: 'center',
-  },
+  }),
 
-  Button: {
+  Button: bgColor => ({
     height: 48,
     paddingLeft: 30,
     paddingRight: 30,
-    backgroundColor: gColors.buttonBackground,
+    backgroundColor: bgColor || gColors.buttonBackground,
     justifyContent: 'center',
-  },
+  }),
 
-  ButtonFrame: {
+  ButtonFrame: borderColor => ({
     borderWidth: 1,
-    borderColor: gColors.buttonBorder,
+    borderColor: borderColor || gColors.buttonBorder,
     marginTop: 10,
     borderRadius: 50,
     overflow: 'hidden',
-  },
+  }),
 });
 
 export default Button;

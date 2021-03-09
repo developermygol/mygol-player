@@ -53,6 +53,7 @@ class MatchListItem extends Component {
   handlePress = () => {
     const p = this.props;
     const m = p.match;
+
     if (this.isFillerMatch(m)) return;
 
     const idMatch = m.id;

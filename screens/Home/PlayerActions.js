@@ -6,6 +6,7 @@ import { inject } from '../../node_modules/mobx-react/native';
 import { observer } from '../../node_modules/mobx-react';
 import RightButton from '../../components/common/RightButton';
 import { GS } from '../../GlobalStyles';
+import { getPaymentGetawayType } from '../../store-redux/actions/paypal';
 
 @inject('store')
 @observer
@@ -46,7 +47,7 @@ class PlayerActions extends Component {
     p.navigation.push('Ficha', { player: p.data });
   };
 
-  goToPayment = () => {
+  goToPayment = async () => {
     const p = this.props;
     p.navigation.push('PaymentForm', { player: p.data });
   };

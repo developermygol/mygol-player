@@ -6,6 +6,7 @@ import {
   createStackNavigator,
   createBottomTabNavigator,
 } from 'react-navigation';
+
 import { gColors } from './GlobalStyles';
 import { Localize, setDeviceLangAsync, initLangAndWait } from './components/locale/Loc';
 
@@ -49,6 +50,8 @@ import SanctionDetails from './screens/Sanctions/SanctionDetails';
 import UserNotifications from './screens/Home/UserNotifications';
 import NotificationDetials from './screens/Home/NotificationDetails';
 import DreamTeam from './screens/Tournament/DreamTeam/DreamTeam';
+import MatchNoticeDetail from './screens/Match/MatchNoticeDetail';
+import PaypalScreen from './screens/Paypal/PaypalScreen';
 
 setDeviceLangAsync();
 
@@ -98,6 +101,7 @@ const TournamentsNavigator = createStackNavigator(
     Ficha,
     SanctionDetails,
     Rankings,
+    Notice: MatchNoticeDetail,
   },
   {
     navigationOptions: stackNavigatorOptions,
@@ -144,6 +148,7 @@ const ConfigurationNavigator = createStackNavigator(
     PaidOptionStep: PaidOptionStep,
     PaidOptionsSummary: PaidOptionsSummary,
     PaymentForm: PaymentForm,
+    PaypalScreen: PaypalScreen,
     SocialData: SocialData,
   },
   {
