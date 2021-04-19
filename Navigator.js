@@ -52,6 +52,7 @@ import NotificationDetials from './screens/Home/NotificationDetails';
 import DreamTeam from './screens/Tournament/DreamTeam/DreamTeam';
 import MatchNoticeDetail from './screens/Match/MatchNoticeDetail';
 import PaypalScreen from './screens/Paypal/PaypalScreen';
+import PalyerOrgChooser from './screens/Home/PalyerOrgChooser';
 
 setDeviceLangAsync();
 
@@ -177,6 +178,7 @@ const LoginNavigator = createStackNavigator(
     ResetPassword: ResetPassword,
     RegistrationPin: RegistrationPin,
     PlayerTeamChooser: PlayerTeamChooser,
+    PlayerOrgChooser: PalyerOrgChooser,
   },
   {
     headerMode: 'none',

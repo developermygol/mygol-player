@@ -10,7 +10,6 @@ import * as ScreenOrientation from 'expo-screen-orientation';
 
 import { setDeviceLangAsync } from './components/locale/Loc';
 import { setupPushNotifications } from './components/PushNotifications';
-import PaypalScreen from './screens/Paypal/PaypalScreen';
 
 Text.defaultProps = Text.defaultProps || {};
 Text.defaultProps.allowFontScaling = false;

@@ -35,6 +35,11 @@ export default {
   'Choose team': 'Elige equipo',
   'MoreThanOneTeam.Choose': 'Estás inscrito en más de un equipo, elige cuál quieres ver:',
 
+  // Org chooser
+  Organizations: 'Organizations',
+  'Organizations.Hint': 'You are in more than one organization, choose which one you want to use.',
+  'Select organization': 'Change organization',
+
   // Configuration
 
   'Config.PersonalInfo': 'Información personal',

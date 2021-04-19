@@ -31,7 +31,6 @@ export default {
   PinIntro: 'To validate, enter the PIN number you received in the welcome email.',
 
   // Org chooser
-
   Organizations: 'Organizations',
   'Organizations.Hint': 'You are in more than one organization, choose which one you want to use.',
   'Select organization': 'Change organization',
