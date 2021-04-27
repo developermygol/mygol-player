@@ -82,13 +82,11 @@ class Home extends Component {
       currentUserNotifications = await store.notifications.getUserNotifications();
       this.props.navigation.setParams({ userNotifications: currentUserNotifications });
     }
-
     //Adding an event listner om focus
     //So whenever the screen will have focus it will set the state to zero
     this.focusListener = navigation.addListener('didFocus', () => {
       this.props.navigation.setParams({ userNotifications: store.notifications.userNotifications });
     });
-
     Notifications.addListener(this._handleNotification);
   }
 

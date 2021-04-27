@@ -13,9 +13,18 @@ export const loadUserOrganitzations = async email => {
       `${config.reactAppDirectoryApiUrl2}/organization/userexistandorganitzation/${email}`
     );
 
-    if (response.data) organitzations.push({ ...response.data.organitzation, userId: response.data.userId });
+    if (response.data)
+      organitzations.push({
+        ...response.data.organitzation,
+        userId: response.data.userId,
+        baseUrl: config.reactAppDirectoryApiUrl,
+      });
     if (response2.data)
-      organitzations.push({ ...response2.data.organitzation, userId: response2.data.userId });
+      organitzations.push({
+        ...response2.data.organitzation,
+        userId: response2.data.userId,
+        baseUrl: config.reactAppDirectoryApiUrl2,
+      });
 
     return organitzations;
   } catch (err) {

@@ -7,6 +7,7 @@ import { observer } from '../node_modules/mobx-react/native';
 import { gColors } from '../GlobalStyles';
 import { toast } from './Utils';
 import { withNavigation } from 'react-navigation';
+import { loadUserOrganitzations } from '../store-redux/actions/userOrganitzations';
 
 class DrawerItem extends Component {
   handlePress = () => {
@@ -17,7 +18,7 @@ class DrawerItem extends Component {
       return;
     }
 
-    if (p.navigate && p.navigation) p.navigation.navigate(p.navigate);
+    if (p.navigate && p.navigation) p.navigation.navigate(p.navigate, p.navigationParams);
   };
 
   render() {
@@ -39,6 +40,10 @@ class DrawerItem extends Component {
 @inject('store', 'ui')
 @observer
 class Drawer extends Component {
+  state = {
+    userOrganizations: null,
+  };
+
   handleLogout = () => {
     toast.confirm(Localize('Confirm'), Localize('Logout?')).then(res => {
       if (res !== 'Yes') return;
@@ -49,12 +54,23 @@ class Drawer extends Component {
     });
   };
 
-  componentDidMount = () => {};
+  componentDidMount = async () => {
+    const userOrganizations = await loadUserOrganitzations(this.props.store.players.current.userData.email);
+    this.setState({ userOrganizations });
+  };
+
+  componentDidUpdate = async () => {
+    if (!this.state.userOrganizations) {
+      const userOrganizations = await loadUserOrganitzations(this.props.store.players.current.userData.email);
+      this.setState({ userOrganizations });
+    }
+  };
 
   render() {
     const p = this.props;
     const pl = p.store.players.current;
     const showSelectTeam = pl && pl.teams && pl.teams.length > 1;
+    const showSelectOrg = this.state.userOrganizations && this.state.userOrganizations.length > 1;
 
     return (
       <View style={style.View}>
@@ -65,6 +81,20 @@ class Drawer extends Component {
         <DrawerItem title="Ficha" navigate="FichaRoot" icon="id-card" navigation={p.navigation} />
         <DrawerItem title="TermsAndConditions" navigate="Terms" icon="file" navigation={p.navigation} />
         <DrawerItem title="Configuration" navigate="Configuration" icon="gear" navigation={p.navigation} />
+        {/* Show select org */}
+        {showSelectOrg && (
+          <DrawerItem
+            title="Select organization"
+            navigate="PlayerOrgChooser"
+            icon="child"
+            navigation={p.navigation}
+            navigationParams={{
+              data: { email: this.props.store.players.current.userData.email },
+              organizations: this.state.userOrganizations,
+            }}
+          />
+        )}
+
         {showSelectTeam ? (
           <DrawerItem
             title="Select my team"

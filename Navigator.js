@@ -1,6 +1,7 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import {
+  createAppContainer,
   createDrawerNavigator,
   createSwitchNavigator,
   createStackNavigator,
@@ -74,7 +75,7 @@ const TournamentDetailsTabNavigator = bottomTabCreator(
     DreamTeam: DreamTeam,
   },
   {
-    navigationOptions: {
+    defaultNavigationOptions: {
       tabBarOptions: {
         activeTintColor: gColors.tabBarActive,
         inactiveTinitColor: gColors.tabBarInactive,
@@ -105,7 +106,7 @@ const TournamentsNavigator = createStackNavigator(
     Notice: MatchNoticeDetail,
   },
   {
-    navigationOptions: stackNavigatorOptions,
+    defaultNavigationOptions: stackNavigatorOptions,
   }
 );
 
@@ -115,7 +116,7 @@ const NewsNavigator = createStackNavigator(
     NewsDetails,
   },
   {
-    navigationOptions: stackNavigatorOptions,
+    defaultNavigationOptions: stackNavigatorOptions,
   }
 );
 
@@ -124,7 +125,7 @@ const TermsNavigator = createStackNavigator(
     TermsAndConditions,
   },
   {
-    navigationOptions: stackNavigatorOptions,
+    defaultNavigationOptions: stackNavigatorOptions,
   }
 );
 
@@ -133,7 +134,7 @@ const FichaNavigator = createStackNavigator(
     FichaRoot: DrawerFicha,
   },
   {
-    navigationOptions: stackNavigatorOptions,
+    defaultNavigationOptions: stackNavigatorOptions,
   }
 );
 
@@ -153,7 +154,7 @@ const ConfigurationNavigator = createStackNavigator(
     SocialData: SocialData,
   },
   {
-    navigationOptions: stackNavigatorOptions,
+    defaultNavigationOptions: stackNavigatorOptions,
   }
 );
 
@@ -196,4 +197,4 @@ const RootNavigator = createSwitchNavigator(
   }
 );
 
-export default RootNavigator;
+export default createAppContainer(RootNavigator);

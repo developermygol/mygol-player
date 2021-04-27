@@ -86,11 +86,11 @@ class AuthStore {
     setAxiosEndPoints(endPoints);
   });
 
-  basicLogin = flow(function* (formLoginDetails) {
+  basicLogin = flow(function* (formLoginDetails, alternativeUrl = null) {
     try {
       const result = yield requestAsync(
         this,
-        directoryEndPoint.post,
+        alternativeUrl ? directoryEndPoint(alternativeUrl).post : directoryEndPoint.post,
         null,
         '/users/basiclogin',
         formLoginDetails

@@ -60,15 +60,15 @@ class AttachImage extends Component {
 
   handleImagePicked = async result => {
     if (result.cancelled) return;
-
     const oneMBtoBytes = 1000000;
 
     const fileInfo = await FileSystem.getInfoAsync(result.uri, (options = { size: false }));
 
     if (fileInfo.size > oneMBtoBytes) {
       const compressedImage = await ImageManipulator.manipulateAsync(fileInfo.localUri || fileInfo.uri, [], {
-        compress: Math.round((oneMBtoBytes / fileInfo) * 100) / 100,
+        compress: Math.round((oneMBtoBytes / fileInfo.size) * 100) / 100,
       });
+
       this.size = false;
       this.image = compressedImage.uri;
       return compressedImage;

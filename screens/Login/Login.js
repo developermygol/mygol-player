@@ -67,16 +67,29 @@ class Login extends Component {
       return;
     }
 
-    // 🚧🚧🚧
-    const organizations = await loadUserOrganitzations(data.email);
-    if (organizations.length == 0) return;
-
     const nav = this.props.navigation;
 
-    // 🔎💥🚧 Shoud be after password
-    return nav.navigate('PlayerOrgChooser', { organizations });
+    const organizations = await loadUserOrganitzations(data.email);
 
-    // 🚧🚧🚧
+    if (organizations.length == 0) return;
+    // Set Only ORg as default
+    if (organizations.length == 1) {
+      const result = await this.props.ui.auth.basicLogin(data, organizations[0].baseUrl);
+      if (!result) return;
+
+      switch (result.action) {
+        case LoginPasswordRequired:
+          return nav.navigate('Password');
+        case LoginNoPasswordSet:
+          return nav.navigate('RegistrationPin');
+      }
+    }
+    // Choose from multiple Orgs
+
+    // 🔎💥🚧 Shoud be after password
+    return nav.navigate('PlayerOrgChooser', { data, organizations });
+
+    /* 🚧🚧🚧 Initial version
     const result = await this.props.ui.auth.basicLogin(data);
     if (!result) return;
 
@@ -87,7 +100,7 @@ class Login extends Component {
       case LoginNoPasswordSet:
         nav.navigate('RegistrationPin');
         break;
-    }
+    }*/
   };
 
   render() {
