@@ -192,6 +192,7 @@ you are enrolled in more than one team`,
   'TeamPlayers.NoPlayers': 'No players in team',
   'Team.NoTournamentContext': '--',
   'Team.NoTeamInTournament': '(Team.T)',
+  'TeamPlayer.Sanctioned': '(sanctioned)',
 
   // Rankings
   Rankings: 'Rankings',

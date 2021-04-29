@@ -68,7 +68,6 @@ class Login extends Component {
     }
 
     const nav = this.props.navigation;
-
     const organizations = await loadUserOrganitzations(data.email);
 
     if (organizations.length == 0) return;
