@@ -6,20 +6,29 @@ export const loadUserOrganitzations = async email => {
   try {
     // 🔎 Manual integration with Config
     const organitzations = [];
-    const response = await axios.get(
-      `${config.reactAppDirectoryApiUrl}/organization/userexistandorganitzation/${email}`
-    );
-    const response2 = await axios.get(
-      `${config.reactAppDirectoryApiUrl2}/organization/userexistandorganitzation/${email}`
-    );
+    let response;
+    let response2;
+    try {
+      response = await axios.get(
+        `${config.reactAppDirectoryApiUrl}/organization/userexistandorganitzation/${email}`,
+        { timeout: 500 }
+      );
+    } catch (err) {}
 
-    if (response.data)
+    try {
+      response2 = await axios.get(
+        `${config.reactAppDirectoryApiUrl2}/organization/userexistandorganitzation/${email}`,
+        { timeout: 500 }
+      );
+    } catch (err) {}
+
+    if (response && response.data)
       organitzations.push({
         ...response.data.organitzation,
         userId: response.data.userId,
         baseUrl: config.reactAppDirectoryApiUrl,
       });
-    if (response2.data)
+    if (response2 && response2.data)
       organitzations.push({
         ...response2.data.organitzation,
         userId: response2.data.userId,

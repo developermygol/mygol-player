@@ -5,6 +5,7 @@ import { Localize } from '../../components/locale/Loc';
 import { gColors } from '../../GlobalStyles';
 import { withNavigation } from 'react-navigation';
 import { matchHasSootOut } from '../../helpers/helpers';
+import MatchCumulativeFouls from './MatchCumulativeFouls';
 
 class MatchStatus extends Component {
   handleGoToField = idField => {
@@ -35,6 +36,7 @@ class MatchStatus extends Component {
         <Text style={style.Penalty}>{`${Localize('Penalties')} ${
           match.homeScore - match.visibleHomeScore
         } - ${match.visitorScore - match.visibleVisitorScore}`}</Text>
+        <MatchCumulativeFouls match={match} style={style.Penalty} />
         <Text style={style.Date}>{getShortMatchDate(match.startTime)}</Text>
         <Text style={style.Status}>{Localize('MatchStatus' + match.status)}</Text>
 
