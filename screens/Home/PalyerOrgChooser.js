@@ -18,7 +18,7 @@ const OrgListItem = ({ item, onPressItem, data }) => {
         <View style={styles.Item}>
           <View style={styles.Column}>
             <Text style={styles.OrgName}>{item.name}</Text>
-            {item.motto && <Text style={styles.OrgMotto}>{item.motto}</Text>}
+            <Text style={styles.OrgMotto}>{item.motto}</Text>
           </View>
           <View>
             <FontAwesome name="arrow-right" size={22} style={styles.ItemIcon} color={gColors.text1} />
